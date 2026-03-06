@@ -68,9 +68,9 @@ def get_server_stats(guild):
 def get_channel_name(stat_type, value):
     """Génère le nom du salon avec la valeur"""
     emojis = {
-        'total': '👥',
-        'bots': '🤖',
-        'online': '🟢'
+        'total': '👥・',
+        'bots': '🤖・',
+        'online': '🟢・'
     }
     
     labels = {
@@ -95,7 +95,7 @@ async def create_stats_channels(guild):
             return category
     
     # Créer la catégorie
-    category = await guild.create_category("📊 STATS SERVEUR")
+    category = await guild.create_category("📊 〃 Serveur Stats")
     stats_manager.category_id = category.id
     
     # Créer les 3 salons
@@ -277,4 +277,5 @@ if __name__ == "__main__":
     if not TOKEN:
         print("❌ Erreur: Token non trouvé dans .env")
     else:
+
         bot.run(TOKEN)
